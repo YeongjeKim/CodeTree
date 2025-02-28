@@ -18,7 +18,7 @@ int main() {
     }
 
     int j = 0;
-    while (j != stop) {
+    while (j < stop) {
         sum += arr[j];
         j++;
     }
