@@ -4,27 +4,20 @@ using namespace std;
 int main() {
     int arr[10];
     int sum = 0;
-    int div = 1;
+    int j = 0;
 
     for (int i = 0; i < 10; i++) {
         cin >> arr[i];
     }
 
-    for (int i = 0; i < 10; i++) {
-        if (arr[i] >= 250) {
-            cout << fixed;
-            cout.precision(1);
-            cout << sum << " " << double(sum) / i << endl;
-            break;
-        }
-        else {
-            sum += arr[i];
-        }
+    while (arr[j] < 250) {
+        sum += arr[j];
+        j++;
     }
 
-    // cout << fixed;
-    // cout.precision(1);
-    // cout << sum << " " << double(sum) / div << endl;
+    cout << fixed;
+    cout.precision(1);
+    cout << sum << " " << double(sum) / j << endl;
 
     return 0;
 }
