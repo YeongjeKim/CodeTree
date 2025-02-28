@@ -15,9 +15,12 @@ int main() {
             stop = i;
             break;
         }
-        else {
-            sum += arr[i];
-        }
+    }
+
+    int j = 0;
+    while (j != stop) {
+        sum += arr[j];
+        j++;
     }
 
     cout << fixed;
