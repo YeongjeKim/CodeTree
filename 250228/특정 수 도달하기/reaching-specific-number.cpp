@@ -8,8 +8,13 @@ int main() {
 
     for (int i = 0; i < 10; i++) {
         cin >> arr[i];
+    }
+
+    for (int i = 0; i < 10; i++) {
         if (arr[i] >= 250) {
-            div = i;
+            cout << fixed;
+            cout.precision(1);
+            cout << sum << " " << double(sum) / i << endl;
             break;
         }
         else {
@@ -17,9 +22,9 @@ int main() {
         }
     }
 
-    cout << fixed;
-    cout.precision(1);
-    cout << sum << " " << double(sum) / div << endl;
+    // cout << fixed;
+    // cout.precision(1);
+    // cout << sum << " " << double(sum) / div << endl;
 
     return 0;
 }
