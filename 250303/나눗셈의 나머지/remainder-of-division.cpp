@@ -19,7 +19,7 @@ int main() {
     }
 
     int sum = 0;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < b; i++) {
         int cnt = 0;
         for (int j = 0; j <= stop; j++) {
             if (arr[j] == i) {
