@@ -11,8 +11,8 @@ int main() {
         cin >> A[i];
     }
     int min = A[0];
+    int cnt = 0;
 
-    int cnt = 1;
     for (int i = 0; i < N; i++) {
         if (A[i] < min) {
             min = A[i];
