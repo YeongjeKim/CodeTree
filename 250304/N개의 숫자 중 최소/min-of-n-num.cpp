@@ -12,7 +12,7 @@ int main() {
     }
     int min = A[0];
 
-    int cnt;
+    int cnt = 1;
     for (int i = 0; i < N; i++) {
         if (A[i] < min) {
             min = A[i];
