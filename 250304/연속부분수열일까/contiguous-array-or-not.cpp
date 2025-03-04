@@ -17,9 +17,9 @@ int main() {
 
     // B가 A의 부분연속수열인지 확인
     bool check = false;
-    for (int i = 0; i < n2; i++) {
+    // for (int i = 0; i < n2; i++) {
         for (int j = 0; j < n1; j++) {
-            if (arr[j] == brr[i]) {
+            if (arr[j] == brr[0]) {
 
                 // 수열B의 크기가 수열A의 나머지 원소의 갯수보다 클 때 -> 틀림
                 if (n1 - j < n2) {
@@ -27,14 +27,14 @@ int main() {
                 }
                 
                 check = true;
-                for (int k = 0; k < n2 - i; k++) {
-                    if (arr[j + k] != brr[i + k]) {
+                for (int k = 0; k < n2; k++) {
+                    if (arr[j + k] != brr[k]) {
                         check = false;
                     }
                 }
             }
         }
-    }
+    // }
 
     // 결과 출력
     if (check == true) {
