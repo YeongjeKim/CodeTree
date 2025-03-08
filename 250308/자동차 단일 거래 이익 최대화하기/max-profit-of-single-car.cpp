@@ -11,18 +11,16 @@ int main() {
         cin >> price[i];
     }
 
-    int minPrice = 10000000000;
-    int minIndex = -1;
+    int minPrice = 1410065408;
     int maxProfit = 0;
 
     for (int i = 0; i < n; i++) {
         if (price[i] < minPrice) {
             minPrice = price[i];
-            minIndex = i;
-        }
-        for (int j = minIndex + 1; j < n; j++) {
-            if (price[j] - price[minIndex] > maxProfit) {
-                maxProfit = price[j] - price[minIndex];
+            for (int j = i; j < n; j++) {
+                if (maxProfit < price[j] - price[i]) {
+                    maxProfit = price[j] - price[i];
+                }
             }
         }
     }
