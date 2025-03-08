@@ -22,7 +22,7 @@ int main() {
             minIndex = i;
         }
         for (int j = i; j < n; j++) {
-            if (price[j] < price[i]) {
+            if (price[j] > price[i]) {
                 possible = true;
             }
         }
