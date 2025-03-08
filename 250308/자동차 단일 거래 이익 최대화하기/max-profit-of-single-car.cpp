@@ -20,7 +20,7 @@ int main() {
             minPrice = price[i];
             minIndex = i;
         }
-        for (int j = minIndex; j < n; j++) {
+        for (int j = minIndex + 1; j < n; j++) {
             if (price[j] - price[minIndex] > maxProfit) {
                 maxProfit = price[j] - price[minIndex];
             }
