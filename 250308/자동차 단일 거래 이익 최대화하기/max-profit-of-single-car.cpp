@@ -11,38 +11,56 @@ int main() {
         cin >> price[i];
     }
 
-    // 무작정 최솟값을 구하면 안됨. 오른쪽에 더 큰 값이 있는 수만 적을 수 있음.
-    int minValue = price[0];
-    int minIndex = 0;
-    bool possible = false;
+    int minPrice = 10000000000;
+    int minIndex = -1;
+    int maxProfit = 0;
 
     for (int i = 0; i < n; i++) {
-        if (price[i] < minValue) {
-            minValue = price[i];
+        if (price[i] < minPrice) {
+            minPrice = price[i];
             minIndex = i;
         }
-        for (int j = i; j < n; j++) {
-            if (price[j] > price[i]) {
-                possible = true;
+        for (int j = minIndex; j < n; j++) {
+            if (price[j] - price[minIndex] > maxProfit) {
+                maxProfit = price[j] - price[minIndex];
             }
         }
     }
 
-    int maxValue = -1;
-    int maxIndex = -1;
-    for (int i = minIndex; i < n; i++) {
-        if (price[i] > minValue && price[i] > maxValue) {
-            maxValue = price[i];
-            maxIndex = i;
-        }
-    }
+    cout << maxProfit << endl;
 
-    if (maxIndex == -1 || possible == false) {
-        cout << 0 << endl;
-    }
-    else {
-        cout << maxValue - minValue << endl;
-    }
+    // // 무작정 최솟값을 구하면 안됨. 오른쪽에 더 큰 값이 있는 수만 적을 수 있음.
+    // int minValue = price[0];
+    // int minIndex = 0;
+    // bool possible = false;
+
+    // for (int i = 0; i < n; i++) {
+    //     if (price[i] < minValue) {
+    //         minValue = price[i];
+    //         minIndex = i;
+    //     }
+    //     for (int j = i; j < n; j++) {
+    //         if (price[j] > price[i]) {
+    //             possible = true;
+    //         }
+    //     }
+    // }
+
+    // int maxValue = -1;
+    // int maxIndex = -1;
+    // for (int i = minIndex; i < n; i++) {
+    //     if (price[i] > minValue && price[i] > maxValue) {
+    //         maxValue = price[i];
+    //         maxIndex = i;
+    //     }
+    // }
+
+    // if (maxIndex == -1 || possible == false) {
+    //     cout << 0 << endl;
+    // }
+    // else {
+    //     cout << maxValue - minValue << endl;
+    // }
 
     return 0;
 }
